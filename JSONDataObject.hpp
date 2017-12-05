@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Mon 04 Dec 2017 05:43:56 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:51:28 PM PST
  *
  *  Description: Class definition for JSONDataObject
  *
@@ -11,6 +11,10 @@
 
 #ifndef JSON_DATA_OBJECT_H
 #define JSON_DATA_OBJECT_H
+
+#include <string>
+#include <vector>
+#include "JSONDataItem.hpp"
 
 class JSONDataObject {
     public:
