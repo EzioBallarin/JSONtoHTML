@@ -3,26 +3,26 @@
  #  Author: Ezio Ballarin 
  #  Student ID: 005633321
  #  Creation Date: 11-12-2017
- #  Last Modified: Mon 04 Dec 2017 10:53:22 PM PST
+ #  Last Modified: Tue 05 Dec 2017 02:37:12 PM PST
  #
  #  Description: Makefile for project 4.
  #
 
 CFLAGS = -ggdb -Wall -std=c++11
 
-parser.x: clean JSONArray.o JSONDataObject.o JSONDataItem.o Track.o Album.o Artist.o Tracks.o Albums.o Artists.o main.o 
+parser.x: clean JSONArray.o Track.o Album.o Artist.o Tracks.o Albums.o Artists.o main.o 
 	g++ $(CFLAGS) *.o -o parser.x
 
 main.o: main.cpp
 	g++ $(CFLAGS) -c main.cpp -o main.o
 
-Artists.o: Artists.cpp JSON*.o
+Artists.o: Artists.cpp JSONArray.o
 	g++ $(CFLAGS) -c Artists.cpp -o Artists.o
 
-Albums.o: Albums.cpp JSON*.o
+Albums.o: Albums.cpp JSONArray.o
 	g++ $(CFLAGS) -c Albums.cpp -o Albums.o
 
-Tracks.o: Tracks.cpp JSON*.o
+Tracks.o: Tracks.cpp JSONArray.o 
 	g++ $(CFLAGS) -c Tracks.cpp -o Tracks.o
 
 Artist.o: Artist.cpp
@@ -40,7 +40,7 @@ JSONDataItem.o: JSONDataItem.cpp
 JSONDataObject.o: JSONDataObject.cpp
 	g++ $(CFLAGS) -c JSONDataObject.cpp -o JSONDataObject.o
 
-JSONArray.o: JSONArray.cpp
+JSONArray.o: JSONDataItem.o JSONDataObject.o JSONArray.cpp 
 	g++ $(CFLAGS) -c JSONArray.cpp -o JSONArray.o
 
 clean:
