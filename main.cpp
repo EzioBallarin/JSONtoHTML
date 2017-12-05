@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Mon 04 Dec 2017 05:35:01 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:47:52 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -14,9 +14,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include "Album.hpp"
-#include "Artist.hpp"
-#include "Track.hpp"
+#include "Artists.hpp"
 
 using namespace std;
 

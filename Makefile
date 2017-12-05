@@ -3,7 +3,7 @@
  #  Author: Ezio Ballarin 
  #  Student ID: 005633321
  #  Creation Date: 11-12-2017
- #  Last Modified: Sat 18 Nov 2017 11:18:06 PM PST
+ #  Last Modified: Mon 04 Dec 2017 05:46:27 PM PST
  #
  #  Description: Makefile for project 4.
  #
@@ -16,14 +16,14 @@ parser.x: clean main.o Album.o Artist.o Track.o
 main.o: main.cpp
 	g++ $(CFLAGS) main.cpp -c -o main.o
 
-Album.o: Album.cpp
-	g++ $(CFLAGS) Album.cpp -c -o Album.o
+JSONDataItem.o: JSONDataItem.cpp
+	g++ $(CFLAGS) JSONDataItem.cpp -o JSONDataObject.o
 
-Artist.o: Artist.cpp
-	g++ $(CFLAGS) Artist.cpp -c -o Artist.o
+JSONDataObject.o: JSONDataObject.cpp
+	g++ $(CFLAGS) JSONDataObject.cpp -o JSONDataObject.o
 
-Track.o: Track.cpp
-	g++ $(CFLAGS) Track.cpp -c -o Track.o
+JSONArray.o: JSONArray.cpp
+	g++ $(CFLAGS) JSONArray.cpp -o JSONArray.o
 
 clean:
 	clear

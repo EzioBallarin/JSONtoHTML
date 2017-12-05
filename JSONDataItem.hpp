@@ -3,11 +3,14 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Sun 03 Dec 2017 08:47:45 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:43:50 PM PST
  *
  *  Description: Class description for JSONDataItem
  *
  */
+
+#ifndef JSON_DATA_ITEM_H
+#define JSON_DATA_ITEM_H
 
 class JSONDataItem {
     public:
@@ -26,3 +29,4 @@ class JSONDataItem {
 
         std::string readQuotedString(std::fstream &stream);
 };
+#endif

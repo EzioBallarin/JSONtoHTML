@@ -1,13 +1,17 @@
 /**
  *  File Name: Album.hpp
- *  Author: Ezio Ballarin 
+ *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Sun 03 Dec 2017 09:07:59 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:41:34 PM PST
  *
  *  Description: Definition of class Album, subclass of JSONDataObject
  *
  */
+#ifndef ALBUM_H
+#define ALBUM_H
+
+#include "JSONDataObject.hpp"
 
 class Album: public JSONDataObject {
     public:
@@ -33,3 +37,4 @@ class Album: public JSONDataObject {
         void print();
         std::string htmlString();
 };
+#endif

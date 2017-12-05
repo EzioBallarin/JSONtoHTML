@@ -3,11 +3,16 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Sun 03 Dec 2017 09:12:51 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:39:13 PM PST
  *
  *  Description:Definition of class Track, subclass of JSONDataObject
  *
  */
+#ifndef TRACK_H
+#define TRACK_H
+
+#include "JSONDataObject"
+
 class Track: public JSONDataObject {
     public:
         Track();
@@ -23,3 +28,4 @@ class Track: public JSONDataObject {
     private:
 
 };
+#endif

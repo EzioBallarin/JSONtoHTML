@@ -1,13 +1,17 @@
 /**
  *  File Name: Artist.hpp
- *  Author: Ezio Ballarin 
+ *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Sun 03 Dec 2017 09:07:16 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:41:45 PM PST
  *
  *  Description: Definition of class Artist, subclass of JSONDataObject
  *
  */
+
+#ifndef ARTIST_H
+#define ARTIST_H
+#include "JSONDataObject.hpp"
 
 class Artist: public JSONDataObject {
     public:
@@ -43,3 +47,4 @@ class Artist: public JSONDataObject {
         Albums *_albums;
 
 };
+#endif

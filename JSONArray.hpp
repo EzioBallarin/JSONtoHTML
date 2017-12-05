@@ -3,11 +3,15 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Sun 03 Dec 2017 09:30:20 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:41:15 PM PST
  *
  *  Description: Definition of JSONArray class
  *
  */
+
+#ifndef JSON_ARRAY_H
+#define JSON_ARRAY_H
+
 class JSONArray {
     public:
         JSONArray();
@@ -22,3 +26,4 @@ class JSONArray {
         std::vector<JSONDataObject *> *_listOfDataObjects;
 
 };
+#endif

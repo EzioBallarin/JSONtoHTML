@@ -3,11 +3,14 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Sun 03 Dec 2017 08:48:28 PM PST
+ *  Last Modified: Mon 04 Dec 2017 05:43:56 PM PST
  *
  *  Description: Class definition for JSONDataObject
  *
  */
+
+#ifndef JSON_DATA_OBJECT_H
+#define JSON_DATA_OBJECT_H
 
 class JSONDataObject {
     public:
@@ -22,3 +25,4 @@ class JSONDataObject {
     private:
         std::vector<JSONDataItem *> *_listOfDataItems;
 };
+#endif
