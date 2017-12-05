@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Mon 04 Dec 2017 09:41:34 PM PST
+ *  Last Modified: Mon 04 Dec 2017 10:43:46 PM PST
  *
  *  Description: Definition of class Album, subclass of JSONDataObject
  *
@@ -11,6 +11,11 @@
 
 #ifndef ALBUM_H
 #define ALBUM_H
+
+#include "JSONDataObject.hpp"
+#include "Tracks.hpp"
+#include "Artist.hpp"
+#include "AlbumImage.hpp"
 
 class Album: public JSONDataObject {
     public:
@@ -38,6 +43,7 @@ class Album: public JSONDataObject {
 
     private:
         Tracks* _tracks;
-        AlbumImage* _primaryAlbumImage, _secondaryAlbumImage;
+        AlbumImage *_primaryAlbumImage = nullptr, 
+                   *_secondaryAlbumImage = nullptr;
 };
 #endif
