@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Mon 04 Dec 2017 10:56:01 PM PST
+ *  Last Modified: Wed 06 Dec 2017 03:17:22 PM PST
  *
  *  Description:Definition of class Track, subclass of JSONDataObject
  *
@@ -19,15 +19,22 @@ class Track: public JSONDataObject {
         ~Track();
 
         std::string title();
-        std::string artist_name();
-        std::string album_name();
-        unsigned album_id();
+        std::string artistName();
+        std::string albumName();
         std::string duration();
-        unsigned position();
+        std::string position();
+        unsigned albumID();
 
         void print();
 
     private:
+        std::string _title, _artist_name, 
+                    _album_name, _duration, _position;
+        unsigned _albumID;
+        bool cachedTitle = false, cachedArtistName = false, 
+             cachedAlbumName = false, cachedDuration = false,
+             cachedPosition = false, cachedAlbumID = false;
+
 
 };
 #endif

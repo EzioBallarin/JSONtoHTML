@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Wed 06 Dec 2017 02:38:25 PM PST
+ *  Last Modified: Wed 06 Dec 2017 03:04:55 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -49,7 +49,7 @@ int main() {
     /* PARSE ARTISTS */
     cout << "Parsing artists..." << endl;
     a->loadArtistsFromFile("inputJSONfiles/artists.json");
-    a->print();
+    //a->print();
     int x = 3;
     Artist* ar = a->artistWithID(x);
     if (ar != nullptr)
@@ -73,7 +73,7 @@ int main() {
         al->parseJSONArray(albumsJSON);
     }
     albumsJSON.close();
-    al->print();
+    //al->print();
     cout << "Done parsing albums." << endl;
     /******************************************/
 
@@ -91,6 +91,7 @@ int main() {
         t->parseJSONArray(tracksJSON);
     }
     tracksJSON.close();
+    t->print();
     cout << "Done parsing tracks." << endl;
     /******************************************/
 
