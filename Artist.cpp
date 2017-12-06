@@ -3,12 +3,13 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 12:25:59 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:10:54 PM PST
  *
  *  Description:
  *
  */
 
+#include <string>
 #include "Artist.hpp"
 
 Artist::Artist() {
@@ -33,6 +34,19 @@ std::string Artist::numImages() {
 }
 unsigned Artist::artistID() {
     return valueForIntegerAttribute("artist_id");
+}
+
+/**
+ * Name: htmlString()
+ * 
+ * Purpose: Produce a formatted HTML string representing this Artist.
+ * Parameters: None.
+ * Return: A formatted HTML list item.
+ * 
+ */
+std::string Artist::htmlString() {
+    std::string html = "";
+    return html;
 }
 
 void Artist::print() {

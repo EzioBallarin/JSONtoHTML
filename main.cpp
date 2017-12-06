@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Wed 06 Dec 2017 12:02:34 PM PST
+ *  Last Modified: Wed 06 Dec 2017 01:51:51 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -48,18 +48,14 @@ int main() {
 
     /* PARSE ARTISTS */
     cout << "Parsing artists..." << endl;
-    artistsJSON.open("inputJSONfiles/artists.json");
-
-    if (!(artistsJSON >> c) || c != '[') {
-        cout << "Improper JSON detected in Artists JSON." << endl;
-        return -1;
-    }
-
-    while (artistsJSON.good()) {
-        a->parseJSONArray(artistsJSON);
-    }
-    artistsJSON.close();
+    a->loadArtistsFromFile("inputJSONfiles/artists.json");
     a->print();
+    int x = 3;
+    Artist* ar = a->artistWithID(x);
+    if (ar != nullptr)
+        ar->print();
+    else
+        cout << "Didn't find artist " << x << endl;
     cout << "Done parsing artists." << endl;
     /******************************************/
 

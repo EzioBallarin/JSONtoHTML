@@ -3,9 +3,9 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Tue 05 Dec 2017 09:38:14 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:24:50 PM PST
  *
- *  Description:
+ *  Description: Definition of Albums container class
  *
  */
 
@@ -13,13 +13,14 @@
 #define ALBUMS_H
 
 #include "JSONArray.hpp"
+#include "Album.hpp"
 
 class Albums: public JSONArray {
 
     public:
         Albums();
         ~Albums();
-        virtual JSONDataObject* jsonObjectNode();
+        JSONDataObject* jsonObjectNode() { return new Album(); }
 
 };
 

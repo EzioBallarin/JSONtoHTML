@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 09:36:27 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:25:45 PM PST
  *
  *  Description: Definition of class Artist, subclass of JSONDataObject
  *
@@ -13,8 +13,9 @@
 #define ARTIST_H
 
 #include "JSONDataObject.hpp"
-#include "Albums.hpp"
 #include "ArtistImage.hpp"
+
+class Albums;
 
 class Artist: public JSONDataObject {
     public:

@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 09:24:12 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:11:30 PM PST
  *
  *  Description: Definition of the Artists class, a subclass of JSONArray
  *
@@ -26,7 +26,7 @@ class Artists: public JSONArray {
 
         int numArtists();
         void addArtist(Artist *artist);
-        Artist *artistWithID(unsigned int aID);
+        Artist *artistWithID(int aID);
         void loadArtistsFromFile(std::string fileName);
         std::string htmlString();
         JSONDataObject *jsonObjectNode() { return new Artist();  }
@@ -34,5 +34,6 @@ class Artists: public JSONArray {
         void setImagesForArtists(ArtistImages *);
         std::vector<Artist *> *listOfArtists() { return (std::vector<Artist *> *) _listOfDataObjects; }
         void runAsserts();  // used for checking the integrity of this class.
+        virtual void print();
 };
 #endif
