@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 12:11:52 PM PST
+ *  Last Modified: Wed 06 Dec 2017 12:25:47 PM PST
  *
  *  Description: Implementation of JSONArray class.
  *
@@ -43,7 +43,6 @@ void JSONArray::parseJSONArray(std::fstream &stream) {
         if (c == '{') {
             
 
-            //JSONDataObject* newObj = new JSONDataObject(); 
             JSONDataObject* newObj = jsonObjectNode(); 
             newObj->parseFromJSONstream(stream);
             _listOfDataObjects->push_back(newObj);

@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 12:20:07 PM PST
+ *  Last Modified: Wed 06 Dec 2017 12:26:29 PM PST
  *
  *  Description:
  *
@@ -88,11 +88,7 @@ std::string JSONDataObject::valueForStringAttribute(std::string s) {
  */
 int JSONDataObject::valueForIntegerAttribute(std::string s) {
     std::vector<JSONDataItem*>::iterator it = listOfDataItems()->begin();
-    std::cout << "Looking for " << s << std::endl;
-    std::cout << typeid(s).name() << " " << typeid((*it)->attribute()).name() << std::endl;
-    while ((*it)->attribute() != s) {
-        std::cout << "Found " << (*it)->attribute() << "..." << std::endl;
+    while ((*it)->attribute() != s) 
         it++;
-    }
     return (*it)->integerValue();
 }

@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 12:24:43 PM PST
+ *  Last Modified: Wed 06 Dec 2017 12:25:59 PM PST
  *
  *  Description:
  *
@@ -40,8 +40,7 @@ void Artist::print() {
     std::cout << "\tName: " << artistName() << std::endl;
     std::cout << "\tRealName: " << realName() << std::endl;
     std::cout << "\tProfile: " << profile() << std::endl;
-    int a_ID = artistID();
-    std::cout << "\tArtist ID: " << a_ID<< std::endl;
+    std::cout << "\tArtist ID: " << artistID() << std::endl;
     std::cout << "\tNumber of Images: " << numImages() << std::endl;
     std::cout << std::endl;
 }
