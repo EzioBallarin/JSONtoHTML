@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 05:28:22 PM PST
+ *  Last Modified: Tue 05 Dec 2017 05:46:16 PM PST
  *
  *  Description: Implementation of JSONArray class.
  *
@@ -11,6 +11,7 @@
 
 #include "JSONArray.hpp"
 
+// Initialize new vector of JSONDataObject's when a JSONArray is created
 JSONArray::JSONArray() {
     _listOfDataObjects = new std::vector<JSONDataObject*>();
 }
@@ -44,7 +45,11 @@ void JSONArray::parseJSONArray(std::fstream &stream) {
 }
 
 JSONDataObject* JSONArray::jsonObjectNode() {
-    return nullptr;
+    return new JSONDataObject();
+}
+
+int JSONArray::numJSONObjects() {
+    return _listOfDataObjects->size();
 }
 
 void JSONArray::print() {
@@ -56,8 +61,19 @@ void JSONArray::print() {
     std::vector<JSONDataObject*>::iterator it = _listOfDataObjects->begin();
     std::cout << "Looking for artist name" << std::endl;
     while (it != _listOfDataObjects->end()) {
-        std::string name = (*it)->valueForStringAttribute("name");
-        std::cout << name << std::endl;
-        ++it;
+        std::string s = (*it)->valueForStringAttribute("artist_name");
+        std::cout << s << std::endl;
+        it++;
     }
+    std::cout << "Looking for artist_id" << std::endl;
+    it = _listOfDataObjects->begin();
+
+    while (it != _listOfDataObjects->end()) {
+        int i = (*it)->valueForIntegerAttribute("artist_id");
+        std::cout << i << std::endl;
+        it++;
+    }
+
+    std::cout << std::endl << "Num artists: " << numJSONObjects() << std::endl;
+
 }

@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 03:07:53 PM PST
+ *  Last Modified: Tue 05 Dec 2017 05:38:22 PM PST
  *
  *  Description: Class definition for JSONDataObject
  *
