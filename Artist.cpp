@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 02:10:54 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:35:05 PM PST
  *
  *  Description:
  *
@@ -20,20 +20,94 @@ Artist::~Artist() {
 
 }
 
+/**
+ * Name: profile() 
+ * 
+ * Purpose: Get the profile of the current artist.
+ * Parameters: None.
+ * Return: The artist's profile.
+ * 
+ * Notes: Only searches the JSONDataItem vector if the value
+ *        has never been sought after before. Otherwise,
+ *        it returns the cached version of the attribute.
+ */
 std::string Artist::profile() {
-    return valueForStringAttribute("profile");
+    if (cachedProfile)
+        return _profile;
+    cachedProfile = true;
+    return _profile = valueForStringAttribute("profile");
 }
+
+/**
+ * Name: artistName() 
+ * 
+ * Purpose: Get the artist name of the current artist.
+ * Parameters: None.
+ * Return: The artist's name.
+ * 
+ * Notes: Only searches the JSONDataItem vector if the value
+ *        has never been sought after before. Otherwise,
+ *        it returns the cached version of the attribute.
+ */
 std::string Artist::artistName() {
-    return valueForStringAttribute("artist_name");
+    if (cachedName)
+        return _name;
+    cachedName = true;
+    return _name valueForStringAttribute("artist_name");
 }
+
+/**
+ * Name: realName() 
+ * 
+ * Purpose: Get the artist's real name of the current artist.
+ * Parameters: None.
+ * Return: The artist's real name.
+ * 
+ * Notes: Only searches the JSONDataItem vector if the value
+ *        has never been sought after before. Otherwise,
+ *        it returns the cached version of the attribute.
+ */
 std::string Artist::realName() {
-    return valueForStringAttribute("real_name");
+    if (cachedRealName)
+        return _realName;
+    cachedRealName = true;
+    return _realName = valueForStringAttribute("real_name");
 }
+
+/**
+ * Name: numImages() 
+ * 
+ * Purpose: Get the number of images associated with the current artist. 
+ * Parameters: None.
+ * Return: The number of images associated with the current artist.
+ * 
+ * Notes: Only searches the JSONDataItem vector if the value
+ *        has never been sought after before. Otherwise,
+ *        it returns the cached version of the attribute.
+ */
 std::string Artist::numImages() {
-    return valueForStringAttribute("num_images");
+    if (cachedNumImages)
+        return _numImages;
+    cachedNumImages = true;
+    return _numImages = valueForStringAttribute("num_images");
 }
+
+/**
+ * Name: artistID()
+ * 
+ * Purpose: Get the current artist's artist ID 
+ * Parameters: None.
+ * Return: The current artist's ID 
+ * 
+ * Notes: Only searches the JSONDataItem vector if the value
+ *        has never been sought after before. Otherwise,
+ *        it returns the cached version of the attribute.
+ */
 unsigned Artist::artistID() {
-    return valueForIntegerAttribute("artist_id");
+    if (cachedArtistID)
+        return _artistID;
+    cachedArtistID = true;
+    return _artistID = valueForIntegerAttribute("artist_id");
 }
 
 /**
