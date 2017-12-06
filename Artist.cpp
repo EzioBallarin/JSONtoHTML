@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Tue 05 Dec 2017 09:32:51 PM PST
+ *  Last Modified: Wed 06 Dec 2017 12:24:43 PM PST
  *
  *  Description:
  *
@@ -32,14 +32,16 @@ std::string Artist::numImages() {
     return valueForStringAttribute("num_images");
 }
 unsigned Artist::artistID() {
-    return valueForIntegerAttribute("artist_id:");
+    return valueForIntegerAttribute("artist_id");
 }
 
 void Artist::print() {
-    std::cout << "Name: " << artistName() << std::endl;
-    std::cout << "RealName: " << realName() << std::endl;
-    std::cout << "Profile: " << profile() << std::endl;
-    std::cout << "Artist ID: " << artistID() << std::endl;
-    std::cout << "Number of Images: " << numImages() << std::endl;
+    std::cout << "Artist: " << std::endl;
+    std::cout << "\tName: " << artistName() << std::endl;
+    std::cout << "\tRealName: " << realName() << std::endl;
+    std::cout << "\tProfile: " << profile() << std::endl;
+    int a_ID = artistID();
+    std::cout << "\tArtist ID: " << a_ID<< std::endl;
+    std::cout << "\tNumber of Images: " << numImages() << std::endl;
     std::cout << std::endl;
 }
