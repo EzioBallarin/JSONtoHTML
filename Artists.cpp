@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 09:24:10 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:29:42 PM PST
  *
  *  Description: Implementation of Artists class
  *
@@ -13,6 +13,10 @@
 
 Artists::Artists() {
 
+}
+
+Artists::~Artists() {
+    
 }
 
 void Artists::loadArtistsFromFile(std::string artistsFileName) {

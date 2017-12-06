@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 11:13:48 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:33:58 PM PST
  *
  *  Description: Implementation of JSONArray class.
  *
@@ -17,6 +17,7 @@ JSONArray::JSONArray() {
 }
 
 JSONArray::~JSONArray() {
+    listOfDataObjects()->erase(listOfDataObjects()->begin(), listOfDataObjects()->end());
     delete _listOfDataObjects;
 }
 
@@ -33,7 +34,6 @@ JSONArray::~JSONArray() {
  */
 void JSONArray::parseJSONArray(std::fstream &stream) {
     char c;
-    std::cout << std::endl << "Parsing array..." << std::endl;
     while (stream.good()) {
         stream >> c;
         

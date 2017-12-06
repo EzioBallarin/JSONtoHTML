@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Tue 05 Dec 2017 11:13:22 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:34:51 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -46,6 +46,7 @@ int main() {
     Albums* al = new Albums();
     Tracks* t = new Tracks();
 
+    /* PARSE ARTISTS */
     cout << "Parsing artists..." << endl;
     artistsJSON.open("inputJSONfiles/artists.json");
 
@@ -57,8 +58,12 @@ int main() {
     while (artistsJSON.good()) {
         a->parseJSONArray(artistsJSON);
     }
-    a->print();
     artistsJSON.close();
+    cout << "Done parsing artists." << endl;
+    /******************************************/
+
+
+    /* PARSE ALBUMS */
     cout << "Parsing albums..." << endl;
     albumsJSON.open("inputJSONfiles/albums.json");
 
@@ -70,9 +75,12 @@ int main() {
     while (albumsJSON.good()) {
         al->parseJSONArray(albumsJSON);
     }
-    al->print();
     albumsJSON.close();
+    cout << "Done parsing albums." << endl;
+    /******************************************/
 
+
+    /* PARSE TRACKS */
     cout << "Parsing tracks..." << endl;
     tracksJSON.open("inputJSONfiles/tracks.json");
 
@@ -84,7 +92,12 @@ int main() {
     while (tracksJSON.good()) {
         t->parseJSONArray(tracksJSON);
     }
-    t->print();
     tracksJSON.close();
+    cout << "Done parsing tracks." << endl;
+    /******************************************/
+
+    delete a;
+    delete al;
+    delete t;
     return 0;
 }

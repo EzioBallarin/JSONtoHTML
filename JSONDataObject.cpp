@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Tue 05 Dec 2017 11:12:45 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:33:52 PM PST
  *
  *  Description:
  *
@@ -17,6 +17,7 @@ JSONDataObject::JSONDataObject() {
 }
 
 JSONDataObject::~JSONDataObject() {
+    _listOfDataItems->erase(_listOfDataItems->begin(), _listOfDataItems->end());
     delete _listOfDataItems;
 }
 
@@ -34,7 +35,6 @@ JSONDataObject::~JSONDataObject() {
  */
 void JSONDataObject::parseFromJSONstream(std::fstream &stream) {
     char c = stream.get();
-    std::cout << std::endl << "Parsing Object" << std::endl;
     while (stream.good() && c != '}' && c != ']') {
         if (c == '"') {
             JSONDataItem* newPair = new JSONDataItem();
