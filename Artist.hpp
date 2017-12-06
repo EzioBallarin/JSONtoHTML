@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 02:25:45 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:44:59 PM PST
  *
  *  Description: Definition of class Artist, subclass of JSONDataObject
  *
@@ -40,9 +40,9 @@ class Artist: public JSONDataObject {
     private:
         std::string _name, _realName, _profile, _numImages;
         unsigned _artistID;
-        bool cachedName, cachedRealName,
-        cachedProfile, cachedNumImages,
-        cachedArtistID;
+        bool cachedName = false, cachedRealName = false,
+             cachedProfile = false, cachedNumImages = false,
+             cachedArtistID = false;
 
         // the following 3 variables are new to
         // this project.

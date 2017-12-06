@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Wed 06 Dec 2017 01:51:51 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:38:25 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -73,6 +73,7 @@ int main() {
         al->parseJSONArray(albumsJSON);
     }
     albumsJSON.close();
+    al->print();
     cout << "Done parsing albums." << endl;
     /******************************************/
 
