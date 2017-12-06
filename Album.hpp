@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 02:44:29 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:57:23 PM PST
  *
  *  Description: Definition of class Album, subclass of JSONDataObject
  *
@@ -43,11 +43,12 @@ class Album: public JSONDataObject {
 
     private:
         std::string _title, _genres, _year;
-        unsigned _album_id, num_tracks, artist_id, num_images;
+        unsigned _album_id, _num_tracks, _artist_id, _num_images;
         bool cachedTitle = false, cachedGenres = false, 
              cachedYear = false, cachedAlbumID = false, 
              cachedNumTracks = false, cachedArtistID = false, 
              cachedNumImages = false;
+
         Tracks* _tracks;
         AlbumImage *_primaryAlbumImage = nullptr, 
                    *_secondaryAlbumImage = nullptr;
