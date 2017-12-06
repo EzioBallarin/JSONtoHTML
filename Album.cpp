@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 02:59:04 PM PST
+ *  Last Modified: Wed 06 Dec 2017 03:02:39 PM PST
  *
  *  Description:
  *
@@ -146,5 +146,13 @@ unsigned Album::numTracks() {
     return _num_tracks = valueForIntegerAttribute("num_tracks");
 }
 void Album::print() {
-    JSONDataObject::print();
+    std::cout << "Album: " << std::endl;
+    std::cout << "\tTitle: " << title() << std::endl;
+    std::cout << "\tYear: " << year() << std::endl;
+    std::cout << "\tGenres: " << genres() << std::endl;
+    std::cout << "\tNum_tracks: " << numTracks() << std::endl;
+    std::cout << "\tNum_images: " << numImages() << std::endl;
+    std::cout << "\tAlbum_id: " << albumID() << std::endl;
+    std::cout << "\tArtist_id: " << artistID() << std::endl;
+    std::cout << std::endl;
 }
