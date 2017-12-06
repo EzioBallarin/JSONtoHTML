@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Tue 05 Dec 2017 03:51:48 PM PST
+ *  Last Modified: Tue 05 Dec 2017 05:23:13 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -44,7 +44,7 @@ int main() {
     fstream artistsJSON, albumsJSON, tracksJSON;
     Artists* a = new Artists();
     cout << "Parsing artists..." << endl;
-    artistsJSON.open("json_p4/artists/artists_small.json");
+    artistsJSON.open("inputJSONfiles/artists_small.json");
 
     if (!(artistsJSON >> c) || c != '[') {
         cout << "Improper JSON detected in Artists JSON." << endl;

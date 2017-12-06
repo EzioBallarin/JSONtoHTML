@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 03:08:29 PM PST
+ *  Last Modified: Tue 05 Dec 2017 05:22:47 PM PST
  *
  *  Description: Class description for JSONDataItem
  *
