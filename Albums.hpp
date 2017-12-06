@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Tue 05 Dec 2017 02:23:30 PM PST
+ *  Last Modified: Tue 05 Dec 2017 09:38:14 PM PST
  *
  *  Description:
  *
@@ -19,6 +19,7 @@ class Albums: public JSONArray {
     public:
         Albums();
         ~Albums();
+        virtual JSONDataObject* jsonObjectNode();
 
 };
 

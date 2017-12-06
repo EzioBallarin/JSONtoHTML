@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 05:52:09 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:13:48 PM PST
  *
  *  Description: Implementation of JSONArray class.
  *
@@ -93,22 +93,6 @@ void JSONArray::print() {
          it != _listOfDataObjects->end(); ++it) {
         (*it)->print();
     }
-    std::vector<JSONDataObject*>::iterator it = _listOfDataObjects->begin();
-    std::cout << "Looking for artist name" << std::endl;
-    while (it != _listOfDataObjects->end()) {
-        std::string s = (*it)->valueForStringAttribute("artist_name");
-        std::cout << s << std::endl;
-        it++;
-    }
-    std::cout << "Looking for artist_id" << std::endl;
-    it = _listOfDataObjects->begin();
-
-    while (it != _listOfDataObjects->end()) {
-        int i = (*it)->valueForIntegerAttribute("artist_id");
-        std::cout << i << std::endl;
-        it++;
-    }
-
-    std::cout << std::endl << "Num artists: " << numJSONObjects() << std::endl;
+    std::cout << std::endl << "Num objects: " << numJSONObjects() << std::endl;
 
 }

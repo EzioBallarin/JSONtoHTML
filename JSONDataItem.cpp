@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Tue 05 Dec 2017 05:11:09 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:12:25 PM PST
  *
  *  Description:
  *
@@ -28,10 +28,8 @@ JSONDataItem::JSONDataItem() {}
  *        key-value pair.
  */
 void JSONDataItem::parseJSONItem(std::fstream &stream) {
-
     char c;
     stream >> c;
-
     std::string key = "";
 
     while (c != '"') {
@@ -53,7 +51,6 @@ void JSONDataItem::parseJSONItem(std::fstream &stream) {
             p = c;
             c = stream.get();
         }
-
         _attribute = key;
         _svalue = val;
         _isNumber = false;
@@ -63,7 +60,10 @@ void JSONDataItem::parseJSONItem(std::fstream &stream) {
     } else {
         std::stringstream* s = new std::stringstream();
 
-        while (c != '"' && c != ',') {
+        // Keep adding to the val string while current char is not 
+        // the next attribute or while the next char is not
+        // the end of the current object
+        while (c != '"' && c != ',' && stream.peek() != '}') {
             s->put(c);
             stream >> c;
         }
@@ -78,6 +78,7 @@ void JSONDataItem::parseJSONItem(std::fstream &stream) {
         _isNumber = true;
 
     }
+
 
 }
 
@@ -142,7 +143,7 @@ bool JSONDataItem::isNumber() {
 void JSONDataItem::print() {
     std::cout << "\t" << attribute() << ": "; 
     if (isNumber())
-        std::cout << integerValue() << std::endl;
+        std::cout << "n"<<integerValue() << std::endl;
     else
-        std::cout << stringValue() << std::endl;
+        std::cout << "s"<<stringValue() << std::endl;
 }

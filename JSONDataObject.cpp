@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Tue 05 Dec 2017 05:38:28 PM PST
+ *  Last Modified: Tue 05 Dec 2017 11:12:45 PM PST
  *
  *  Description:
  *
@@ -36,13 +36,11 @@ void JSONDataObject::parseFromJSONstream(std::fstream &stream) {
     char c = stream.get();
     std::cout << std::endl << "Parsing Object" << std::endl;
     while (stream.good() && c != '}' && c != ']') {
-        
         if (c == '"') {
             JSONDataItem* newPair = new JSONDataItem();
             newPair->parseJSONItem(stream);
             _listOfDataItems->push_back(newPair);
-        }
-            
+        } 
         c = stream.get();
     }
 }

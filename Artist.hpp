@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Mon 04 Dec 2017 11:22:41 PM PST
+ *  Last Modified: Tue 05 Dec 2017 09:36:27 PM PST
  *
  *  Description: Definition of class Artist, subclass of JSONDataObject
  *

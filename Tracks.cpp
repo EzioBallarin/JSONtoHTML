@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Mon 04 Dec 2017 10:29:04 PM PST
+ *  Last Modified: Tue 05 Dec 2017 09:39:16 PM PST
  *
  *  Description:
  *
@@ -13,4 +13,12 @@
 
 Tracks::Tracks() {
 
+}
+
+Tracks::~Tracks() {
+
+}
+
+JSONDataObject* Tracks::jsonObjectNode() {
+    return new JSONDataObject();
 }
