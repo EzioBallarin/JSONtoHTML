@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 02:35:05 PM PST
+ *  Last Modified: Wed 06 Dec 2017 02:38:54 PM PST
  *
  *  Description:
  *
@@ -53,7 +53,7 @@ std::string Artist::artistName() {
     if (cachedName)
         return _name;
     cachedName = true;
-    return _name valueForStringAttribute("artist_name");
+    return _name = valueForStringAttribute("artist_name");
 }
 
 /**
