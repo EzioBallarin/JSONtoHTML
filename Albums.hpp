@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 04:18:01 PM PST
+ *  Last Modified: Wed 06 Dec 2017 04:49:02 PM PST
  *
  *  Description: Definition of Albums container class
  *
@@ -26,8 +26,8 @@ class Albums: public JSONArray {
         // Collection info
         int numAlbums();
 
-        // Element access
-        Album* albumWithID(int aID);
+        // Find all albums that belong to an artist 
+        Albums* albumsForArtistWithID(int artistID); 
     
         // Collection Modification
         void addAlbum(Album* album);

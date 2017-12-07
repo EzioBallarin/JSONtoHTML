@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 02:11:30 PM PST
+ *  Last Modified: Wed 06 Dec 2017 04:49:06 PM PST
  *
  *  Description: Definition of the Artists class, a subclass of JSONArray
  *

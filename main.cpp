@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Wed 06 Dec 2017 04:21:00 PM PST
+ *  Last Modified: Wed 06 Dec 2017 04:27:44 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -50,12 +50,6 @@ int main() {
     cout << "Parsing artists..." << endl;
     a->loadArtistsFromFile("inputJSONfiles/artists.json");
     //a->print();
-    int x = 3;
-    Artist* ar = a->artistWithID(x);
-    if (ar != nullptr)
-        ar->print();
-    else
-        cout << "Didn't find artist " << x << endl;
     cout << "Done parsing artists." << endl;
     /******************************************/
 
@@ -63,29 +57,18 @@ int main() {
     /* PARSE ALBUMS */
     cout << "Parsing albums..." << endl;
     al->loadAlbumsFromFile("inputJSONfiles/albums.json");
-
-    al->print();
+    //al->print();
     cout << "Done parsing albums." << endl;
     /******************************************/
 
     
     /* PARSE TRACKS */
-    /*
     cout << "Parsing tracks..." << endl;
     tracksJSON.open("inputJSONfiles/tracks.json");
+    t->loadTracksFromFile("inputJSONfiles/tracks.json");
 
-    if (!(tracksJSON >> c) || c != '[') {
-        cout << "Improper JSON detected in Artists JSON." << endl;
-        return -1;
-    }
-
-    while (tracksJSON.good()) {
-        t->parseJSONArray(tracksJSON);
-    }
-    tracksJSON.close();
     t->print();
     cout << "Done parsing tracks." << endl;
-    */
     /******************************************/
 
     delete a;
