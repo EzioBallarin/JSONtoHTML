@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 05:22:47 PM PST
+ *  Last Modified: Thu 07 Dec 2017 09:26:06 AM PST
  *
  *  Description: Class description for JSONDataItem
  *
@@ -27,9 +27,9 @@ class JSONDataItem {
         void print();  // purely for debugging -- any format you want
 
     private:
-        std::string _attribute, _svalue;
-        int _ivalue;
-        bool hasReadAnItem, _isNumber;
+        std::string _attribute = "", _svalue = "";
+        int _ivalue = -1;
+        bool hasReadAnItem = false, _isNumber = false;
 
         std::string readQuotedString(std::fstream &stream);
 };

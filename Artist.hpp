@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Thu 07 Dec 2017 08:50:05 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:25:09 AM PST
  *
  *  Description: Definition of class Artist, subclass of JSONDataObject
  *
@@ -37,17 +37,17 @@ class Artist: public JSONDataObject {
         ArtistImage *&secondaryImage() { return _secondaryImage; }
 
     private:
-        std::string _name, _realName, _profile, _numImages;
-        unsigned _artistID;
+        std::string _name = "", _realName = "", _profile = "", _numImages = "";
+        unsigned _artistID = -1;
         bool cachedName = false, cachedRealName = false,
              cachedProfile = false, cachedNumImages = false,
              cachedArtistID = false;
 
         // the following 3 variables are new to
         // this project.
-        ArtistImage *_primaryImage,
-        *_secondaryImage;
-        Albums *_albums;
+        ArtistImage *_primaryImage = nullptr,
+        *_secondaryImage = nullptr;
+        Albums *_albums = nullptr;
 
 };
 #endif

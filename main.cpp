@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Thu 07 Dec 2017 09:13:47 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:23:35 AM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -61,6 +61,13 @@ int main() {
     cout << "Adding Tracks to Albums..." << endl;
     al->setTracksForAlbums(t);
     //al->print();
+    
+    fstream html;
+    html.open("test.html", ios::out);
+    html << "<html>\n<body>\n";
+    html << a->htmlString();
+    html << "</body>\n</html>\n";
+    html.close();
 
     /* ADD ALBUMS TO ARTISTS */
     a->setAlbumsForArtists(al);
@@ -68,7 +75,9 @@ int main() {
 
     fstream artistsHTML;
     artistsHTML.open("artists.html", ios::out);
+    artistsHTML << "<html>\n<body>\n";
     artistsHTML << a->htmlString();
+    artistsHTML << "</body>\n</html>\n";
     artistsHTML.close();
 
     delete a;

@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Tue 05 Dec 2017 05:38:22 PM PST
+ *  Last Modified: Thu 07 Dec 2017 09:25:38 AM PST
  *
  *  Description: Class definition for JSONDataObject
  *
@@ -29,6 +29,6 @@ class JSONDataObject {
         int valueForIntegerAttribute(std::string s);
 
     private:
-        std::vector<JSONDataItem *> *_listOfDataItems;
+        std::vector<JSONDataItem *> *_listOfDataItems = nullptr;
 };
 #endif

@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 09:14:42 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:28:47 AM PST
  *
  *  Description: Implementation of Albums container class
  *
@@ -71,10 +71,12 @@ void Albums::setArtistForAlbums(Artist* artist) {
 std::string Albums::htmlString() {
     std::string html = "\t<h2>Albums</h2>\n";
     html += "\t<ol clas=\"albums\">\n";
-    std::vector<Album*>::iterator it = listOfAlbums()->begin();
-    while (it != listOfAlbums()->end()) { 
-        html += (*it)->htmlString();
-        it++;
+    if (listOfAlbums() != nullptr) {
+        std::vector<Album*>::iterator it = listOfAlbums()->begin();
+        while (it != listOfAlbums()->end()) { 
+            html += (*it)->htmlString();
+            it++;
+        }
     }
     html += "\t</ol>\n";
     return html;

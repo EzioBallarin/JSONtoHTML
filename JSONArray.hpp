@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 12:02:21 PM PST
+ *  Last Modified: Thu 07 Dec 2017 09:25:28 AM PST
  *
  *  Description: Definition of JSONArray class
  *
@@ -29,7 +29,7 @@ class JSONArray {
         virtual void print();
 
     protected:
-        std::vector<JSONDataObject *> *_listOfDataObjects;
+        std::vector<JSONDataObject *> *_listOfDataObjects = nullptr;
 
 };
 #endif
