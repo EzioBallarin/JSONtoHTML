@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Thu 07 Dec 2017 12:19:06 AM PST
+ *  Last Modified: Thu 07 Dec 2017 12:21:29 AM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -74,11 +74,11 @@ int main() {
     /* ADD TRACKS TO ALBUMS */
     cout << "Adding Tracks to Albums..." << endl;
     al->setTracksForAlbums(t);
-    al->print();
+    //al->print();
 
     /* ADD ALBUMS TO ARTISTS */
     a->setAlbumsForArtists(al);
-    //a->print();
+    a->print();
 
     delete a;
     delete al;

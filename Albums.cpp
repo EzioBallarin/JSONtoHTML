@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 12:13:32 AM PST
+ *  Last Modified: Thu 07 Dec 2017 12:21:48 AM PST
  *
  *  Description: Implementation of Albums container class
  *
@@ -32,6 +32,7 @@ Albums* Albums::albumsForArtistWithID(int artistID) {
             a->addAlbum((*it));
         it++;
     }
+    return a;
 }
 
 void Albums::loadAlbumsFromFile(std::string albumsFileName) {
