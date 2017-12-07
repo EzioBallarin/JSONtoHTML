@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 04:49:04 PM PST
+ *  Last Modified: Wed 06 Dec 2017 11:54:47 PM PST
  *
  *  Description: Implementation of Albums container class
  *
@@ -23,6 +23,19 @@ void Albums::loadAlbumsFromFile(std::string albumsFileName) {
     albStream.open(albumsFileName.c_str(), std::fstream::in);
     parseJSONArray(albStream);
     albStream.close();
+}
+
+void Albums::setTracksForAlbums(Tracks* tracks) {
+    std::vector<Album*>::iterator it = listOfAlbums()->begin();
+    Album* curAlbum; 
+    int curAlbumID;
+    while (it != listOfAlbums()->end()) {
+        curAlbum = (*it);
+        curAlbumID = curAlbum->valueForIntegerAttribute("album_id");
+        Tracks* curAlbumTracks = tracks->tracksInAlbum(curAlbumID);
+        curAlbum->setTracks(curAlbumTracks);
+        it++;
+    }
 }
 
 void Albums::print() {

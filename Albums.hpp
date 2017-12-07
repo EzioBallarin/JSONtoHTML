@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 04:49:02 PM PST
+ *  Last Modified: Wed 06 Dec 2017 11:52:13 PM PST
  *
  *  Description: Definition of Albums container class
  *
@@ -37,6 +37,9 @@ class Albums: public JSONArray {
 
         // HTML representation of collection
         std::string htmlString();
+
+        // Associate a Tracks collection with each Album in this Albums collection
+        void setTracksForAlbums(Tracks* tracks);
 
         // Print for debugging
         virtual void print();

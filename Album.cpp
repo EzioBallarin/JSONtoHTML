@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 03:05:03 PM PST
+ *  Last Modified: Wed 06 Dec 2017 11:56:33 PM PST
  *
  *  Description:
  *
@@ -145,6 +145,11 @@ unsigned Album::numTracks() {
     cachedNumTracks = true;
     return _num_tracks = valueForIntegerAttribute("num_tracks");
 }
+
+void Album::setTracks(Tracks* tracks) {
+    _tracks = tracks;
+}
+
 void Album::print() {
     std::cout << "Album: " << std::endl;
     std::cout << "\tTitle: " << title() << std::endl;
@@ -154,5 +159,7 @@ void Album::print() {
     std::cout << "\tNum_images: " << numImages() << std::endl;
     std::cout << "\tAlbum_id: " << albumID() << std::endl;
     std::cout << "\tArtist_id: " << artistID() << std::endl;
+    std::cout << "\tTracks:" << std::endl;
+    tracks()->print();
     std::cout << std::endl;
 }
