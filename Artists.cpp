@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 02:47:14 PM PST
+ *  Last Modified: Wed 06 Dec 2017 11:23:28 PM PST
  *
  *  Description: Implementation of Artists class
  *
@@ -104,6 +104,19 @@ void Artists::loadArtistsFromFile(std::string artistsFileName) {
 std::string Artists::htmlString() {
     std::string html = "";
     return html;
+}
+
+/**
+ * Name: setAlbumsForArtists()
+ * 
+ * Purpose: Assign the proper Album objects form an Albums collection
+ *          to the corresponding Artist within this Artists collection.
+ * Parameters: Albums* albums - the full list of albums to assign
+ * Return: None.
+ * 
+ */
+void Artists::setAlbumsForArtists(Albums* albums) {
+
 }
 
 void Artists::print() {

@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Wed 06 Dec 2017 04:27:44 PM PST
+ *  Last Modified: Wed 06 Dec 2017 11:39:20 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -67,9 +67,15 @@ int main() {
     tracksJSON.open("inputJSONfiles/tracks.json");
     t->loadTracksFromFile("inputJSONfiles/tracks.json");
 
-    t->print();
+    //t->print();
     cout << "Done parsing tracks." << endl;
     /******************************************/
+
+    /* ADD TRACKS TO ALBUMS */
+    Tracks* tmp = t->tracksInAlbum(3025955);
+    tmp->print();
+
+    /* ADD ALBUMS TO ARTISTS */
 
     delete a;
     delete al;
