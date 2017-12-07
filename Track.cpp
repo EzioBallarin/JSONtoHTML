@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 01:36:42 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:45:03 AM PST
  *
  *  Description: Implementation of the Track class
  *

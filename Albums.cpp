@@ -3,13 +3,14 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 01:02:33 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:14:42 AM PST
  *
  *  Description: Implementation of Albums container class
  *
  */
 
 #include "Albums.hpp"
+#include "Artist.hpp"
 
 Albums::Albums() {
 
@@ -53,6 +54,18 @@ void Albums::setTracksForAlbums(Tracks* tracks) {
         curAlbum->setTracks(curAlbumTracks);
         it++;
     }
+}
+
+void Albums::setArtistForAlbums(Artist* artist) {
+    std::vector<Album*>::iterator it = listOfAlbums()->begin();
+    int curArtistID; 
+    while (it != listOfAlbums()->end()) {
+        curArtistID = (*it)->valueForIntegerAttribute("artist_id");
+        if (curArtistID == artist->valueForIntegerAttribute("artist_id"))
+            (*it)->setArtist(artist);
+        it++;
+    }
+    _isArtistSet = true;
 }
 
 std::string Albums::htmlString() {

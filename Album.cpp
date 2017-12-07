@@ -3,13 +3,14 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 01:23:04 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:10:46 AM PST
  *
  *  Description:
  *
  */
 
 #include "Album.hpp"
+#include "Artist.hpp"
 
 Album::Album() {
 
@@ -152,7 +153,7 @@ std::string Album::htmlString() {
     html += "\t\t\t<table class=\"albumInfo\">\n";
     html += "\t\t\t\t<tbody>\n";
     html += "\t\t\t\t\t<tr><td class=\"aTitle\">" + title() + "</td></tr>\n";
-    html += "\t\t\t\t\t<tr><td>Artist: </td></tr>\n";
+    html += "\t\t\t\t\t<tr><td>Artist: " + artist()->artistName() + "</td></tr>\n";
     html += "\t\t\t\t\t<tr><td>Genres: "+ genres() + "</td></tr>\n";
     html += "\t\t\t\t\t<tr><td>Year: "+ year() + "</td></tr>\n";
     html += "\t\t\t\t</tbody>\n";

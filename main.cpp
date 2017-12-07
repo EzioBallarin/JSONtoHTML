@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Thu 07 Dec 2017 01:02:48 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:13:47 AM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -14,20 +14,9 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include "JSONDataItem.hpp"
-#include "JSONDataObject.hpp"
-#include "JSONArray.hpp"
-#include "Artist.hpp"
 #include "Artists.hpp"
-#include "Album.hpp"
 #include "Albums.hpp"
-#include "ArtistImage.hpp"
-#include "ArtistImages.hpp"
-#include "AlbumImage.hpp"
-#include "AlbumImages.hpp"
-#include "Track.hpp"
 #include "Tracks.hpp"
-
 using namespace std;
 
 /**
@@ -41,8 +30,6 @@ using namespace std;
  */
 int main() {
 
-    char c;
-    fstream artistsJSON, albumsJSON, tracksJSON;
     Artists* a = new Artists();
     Albums* al = new Albums();
     Tracks* t = new Tracks();
@@ -65,9 +52,7 @@ int main() {
     
     /* PARSE TRACKS */
     cout << "Parsing tracks..." << endl;
-    tracksJSON.open("inputJSONfiles/tracks.json");
     t->loadTracksFromFile("inputJSONfiles/tracks.json");
-
     //t->print();
     cout << "Done parsing tracks." << endl;
     /******************************************/

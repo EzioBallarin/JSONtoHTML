@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Thu 07 Dec 2017 01:30:02 AM PST
+ *  Last Modified: Thu 07 Dec 2017 09:15:13 AM PST
  *
  *  Description: Implementation of Artists class
  *
@@ -129,6 +129,8 @@ void Artists::setAlbumsForArtists(Albums* albums) {
         curArtistID = curArtist->valueForIntegerAttribute("artist_id");
         Albums* curArtistAlbums = albums->albumsForArtistWithID(curArtistID);
         curArtist->setAlbums(curArtistAlbums);
+        if (!curArtistAlbums->isArtistSet()) 
+            curArtistAlbums->setArtistForAlbums(curArtist);
         it++;
     }
 }
