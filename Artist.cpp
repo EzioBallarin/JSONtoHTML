@@ -3,13 +3,12 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 02:38:54 PM PST
+ *  Last Modified: Thu 07 Dec 2017 12:13:34 AM PST
  *
  *  Description:
  *
  */
 
-#include <string>
 #include "Artist.hpp"
 
 Artist::Artist() {
@@ -130,5 +129,7 @@ void Artist::print() {
     std::cout << "\tProfile: " << profile() << std::endl;
     std::cout << "\tArtist ID: " << artistID() << std::endl;
     std::cout << "\tNumber of Images: " << numImages() << std::endl;
+    std::cout << "Albums: " << std::endl;
+    albums()->print();
     std::cout << std::endl;
 }

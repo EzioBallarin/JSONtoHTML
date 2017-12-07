@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 03:08:33 PM PST
+ *  Last Modified: Thu 07 Dec 2017 12:14:58 AM PST
  *
  *  Description: Definition of class Album, subclass of JSONDataObject
  *
@@ -14,8 +14,9 @@
 
 #include "JSONDataObject.hpp"
 #include "Tracks.hpp"
-#include "Artist.hpp"
 #include "AlbumImage.hpp"
+
+class Artist;
 
 class Album: public JSONDataObject {
     public:
@@ -30,7 +31,7 @@ class Album: public JSONDataObject {
         unsigned numTracks();
         std::string year();
 
-        void setTracks(Tracks *tracks);
+        void setTracks(Tracks *tracks) { _tracks = tracks; }
         void setArtist(Artist *artist);
         Artist *artist();
         Tracks *tracks()  { return _tracks; }

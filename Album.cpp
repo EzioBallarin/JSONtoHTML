@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 11:56:33 PM PST
+ *  Last Modified: Thu 07 Dec 2017 12:01:19 AM PST
  *
  *  Description:
  *
@@ -144,10 +144,6 @@ unsigned Album::numTracks() {
         return _num_tracks;
     cachedNumTracks = true;
     return _num_tracks = valueForIntegerAttribute("num_tracks");
-}
-
-void Album::setTracks(Tracks* tracks) {
-    _tracks = tracks;
 }
 
 void Album::print() {

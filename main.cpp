@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Wed 06 Dec 2017 11:56:50 PM PST
+ *  Last Modified: Thu 07 Dec 2017 12:19:06 AM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -77,6 +77,8 @@ int main() {
     al->print();
 
     /* ADD ALBUMS TO ARTISTS */
+    a->setAlbumsForArtists(al);
+    //a->print();
 
     delete a;
     delete al;

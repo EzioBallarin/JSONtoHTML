@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 11:54:47 PM PST
+ *  Last Modified: Thu 07 Dec 2017 12:13:32 AM PST
  *
  *  Description: Implementation of Albums container class
  *
@@ -16,6 +16,22 @@ Albums::Albums() {
 }
 Albums::~Albums() {
 
+}
+
+void Albums::addAlbum(Album* album) {
+    listOfAlbums()->push_back(album);
+}
+
+Albums* Albums::albumsForArtistWithID(int artistID) {
+    Albums* a = new Albums();
+    std::vector<Album*>::iterator it = listOfAlbums()->begin();
+    int curArtistID; 
+    while (it != listOfAlbums()->end()) {
+        curArtistID = (*it)->valueForIntegerAttribute("artist_id");
+        if (curArtistID == artistID)
+            a->addAlbum((*it));
+        it++;
+    }
 }
 
 void Albums::loadAlbumsFromFile(std::string albumsFileName) {

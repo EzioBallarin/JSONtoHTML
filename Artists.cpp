@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 11:23:28 PM PST
+ *  Last Modified: Thu 07 Dec 2017 12:07:26 AM PST
  *
  *  Description: Implementation of Artists class
  *
@@ -116,7 +116,16 @@ std::string Artists::htmlString() {
  * 
  */
 void Artists::setAlbumsForArtists(Albums* albums) {
-
+    std::vector<Artist*>::iterator it = listOfArtists()->begin();
+    Artist* curArtist;
+    int curArtistID;
+    while (it != listOfArtists()->end()) {
+        curArtist = (*it);
+        curArtistID = curArtist->valueForIntegerAttribute("artist_id");
+        Albums* curArtistAlbums = albums->albumsForArtistWithID(curArtistID);
+        curArtist->setAlbums(curArtistAlbums);
+        it++;
+    }
 }
 
 void Artists::print() {
