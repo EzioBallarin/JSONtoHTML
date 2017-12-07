@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 12:10:48 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:29:57 AM PST
  *
  *  Description:
  *
@@ -48,6 +48,20 @@ void Tracks::loadTracksFromFile(std::string tracksFileName) {
     trackStream.open(tracksFileName.c_str(), std::fstream::in);
     parseJSONArray(trackStream);
     trackStream.close();
+}
+
+std::string Tracks::htmlString() {
+    std::string html = "\t\t<h2>Tracklist</h2>\n";
+    html += "\t\t<table class=\"tracks\">\n";
+    html += "\t\t\t<tbody>\n";
+    std::vector<Track*>::iterator it = listOfTracks()->begin();
+    while (it != listOfTracks()->end()) {
+        html += (*it)->htmlString();
+        it++;
+    }   
+    html += "\t\t\t</tbody>\n";
+    html += "\t\t</table>\n";
+    return html;
 }
 
 void Tracks::print() {

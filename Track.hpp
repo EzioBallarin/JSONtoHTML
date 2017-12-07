@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Wed 06 Dec 2017 03:17:22 PM PST
+ *  Last Modified: Thu 07 Dec 2017 01:33:35 AM PST
  *
  *  Description:Definition of class Track, subclass of JSONDataObject
  *
@@ -24,7 +24,8 @@ class Track: public JSONDataObject {
         std::string duration();
         std::string position();
         unsigned albumID();
-
+        
+        std::string htmlString();
         void print();
 
     private:

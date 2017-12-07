@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Thu 07 Dec 2017 01:16:53 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:30:02 AM PST
  *
  *  Description: Implementation of Artists class
  *

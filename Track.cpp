@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Wed 06 Dec 2017 03:25:33 PM PST
+ *  Last Modified: Thu 07 Dec 2017 01:36:42 AM PST
  *
  *  Description: Implementation of the Track class
  *
@@ -125,6 +125,13 @@ unsigned Track::albumID() {
         return _albumID;
     cachedAlbumID = true;
     return _albumID = valueForIntegerAttribute("album_id");
+}
+
+std::string Track::htmlString() {
+    std::string html = "\t\t\t\t<tr class=\"tracks\"><td class=\"trackName\">";
+    html += title() + "</td>\n";
+    html += "\t\t\t\t<td>" + duration() + "</td>\n</tr>\n";
+    return html;
 }
 
 void Track::print() {

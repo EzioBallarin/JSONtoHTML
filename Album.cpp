@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 01:12:24 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:23:04 AM PST
  *
  *  Description:
  *
@@ -158,6 +158,7 @@ std::string Album::htmlString() {
     html += "\t\t\t\t</tbody>\n";
     html += "\t\t\t</table>\n";
     html += "\t\t</li>\n";
+    html += tracks()->htmlString();
     return html;
 }
 
