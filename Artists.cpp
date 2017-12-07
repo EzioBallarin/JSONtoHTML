@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Thu 07 Dec 2017 12:07:26 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:16:53 AM PST
  *
  *  Description: Implementation of Artists class
  *
@@ -103,6 +103,11 @@ void Artists::loadArtistsFromFile(std::string artistsFileName) {
  */
 std::string Artists::htmlString() {
     std::string html = "";
+    std::vector<Artist*>::iterator it = listOfArtists()->begin();
+    while (it != listOfArtists()->end()) {
+        html += (*it)->htmlString();
+        it++;
+    }
     return html;
 }
 

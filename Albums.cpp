@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 12:21:48 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:02:33 AM PST
  *
  *  Description: Implementation of Albums container class
  *
@@ -53,6 +53,18 @@ void Albums::setTracksForAlbums(Tracks* tracks) {
         curAlbum->setTracks(curAlbumTracks);
         it++;
     }
+}
+
+std::string Albums::htmlString() {
+    std::string html = "\t<h2>Albums</h2>\n";
+    html += "\t<ol clas=\"albums\">\n";
+    std::vector<Album*>::iterator it = listOfAlbums()->begin();
+    while (it != listOfAlbums()->end()) { 
+        html += (*it)->htmlString();
+        it++;
+    }
+    html += "\t</ol>\n";
+    return html;
 }
 
 void Albums::print() {

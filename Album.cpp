@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 12:01:19 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:12:24 AM PST
  *
  *  Description:
  *
@@ -144,6 +144,21 @@ unsigned Album::numTracks() {
         return _num_tracks;
     cachedNumTracks = true;
     return _num_tracks = valueForIntegerAttribute("num_tracks");
+}
+
+std::string Album::htmlString() {
+    std::string html = "\t\t<li>\n";
+    html += "\t\t\t<p><strong>" + title() + "</strong></p>\n";
+    html += "\t\t\t<table class=\"albumInfo\">\n";
+    html += "\t\t\t\t<tbody>\n";
+    html += "\t\t\t\t\t<tr><td class=\"aTitle\">" + title() + "</td></tr>\n";
+    html += "\t\t\t\t\t<tr><td>Artist: </td></tr>\n";
+    html += "\t\t\t\t\t<tr><td>Genres: "+ genres() + "</td></tr>\n";
+    html += "\t\t\t\t\t<tr><td>Year: "+ year() + "</td></tr>\n";
+    html += "\t\t\t\t</tbody>\n";
+    html += "\t\t\t</table>\n";
+    html += "\t\t</li>\n";
+    return html;
 }
 
 void Album::print() {

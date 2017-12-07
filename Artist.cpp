@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 12:13:34 AM PST
+ *  Last Modified: Thu 07 Dec 2017 12:59:34 AM PST
  *
  *  Description:
  *
@@ -118,7 +118,19 @@ unsigned Artist::artistID() {
  * 
  */
 std::string Artist::htmlString() {
-    std::string html = "";
+    std::cout << "Outputting HTML for artist " << artistName() << std::endl;
+    std::string html = "\t<div class=\"artist\">\n";
+    html += "\t\t<h2>" + artistName() + "</h2>\n";
+    html += "\t\t<table class=\"artistInfo\">\n";
+    html += "\t\t<tbody>\n";
+    html += "\t\t\t<tr><td class=\"tagName\">Number of Images:</td>";
+    html += "<td class=\"value\">" + numImages() + "</td></tr>\n";
+    html += "\t\t\t<tr><td class=\"tagName\">Profile:</td>";
+    html += "<td class=\"value\">" + profile() + "</td></tr>\n";
+    html += "\t\t</tbody>\n";
+    html += "\t\t</table>\n";
+    html += "\t</div>\n";
+    html += albums()->htmlString();
     return html;
 }
 

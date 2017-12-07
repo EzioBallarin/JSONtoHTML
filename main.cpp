@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Thu 07 Dec 2017 12:21:29 AM PST
+ *  Last Modified: Thu 07 Dec 2017 01:02:48 AM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -33,7 +33,8 @@ using namespace std;
 /**
  * Name: main()
  * 
- * Purpose: Read input files, and begin the JSON parsing.
+ * Purpose: Read input JSON files for artists, albums, and tracks,
+ *          then create the master HTMl file for this project.
  * Parameters: None.
  * Return: -1 if an error occurred, 0 otherwise.
  * 
@@ -78,7 +79,12 @@ int main() {
 
     /* ADD ALBUMS TO ARTISTS */
     a->setAlbumsForArtists(al);
-    a->print();
+    //a->print();
+
+    fstream artistsHTML;
+    artistsHTML.open("artists.html", ios::out);
+    artistsHTML << a->htmlString();
+    artistsHTML.close();
 
     delete a;
     delete al;
