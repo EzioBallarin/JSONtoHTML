@@ -3,18 +3,21 @@
  #  Author: Ezio Ballarin 
  #  Student ID: 005633321
  #  Creation Date: 11-12-2017
- #  Last Modified: Tue 05 Dec 2017 02:37:12 PM PST
+ #  Last Modified: Thu 07 Dec 2017 04:23:54 PM PST
  #
  #  Description: Makefile for project 4.
  #
 
 CFLAGS = -ggdb -Wall -std=c++11
 
-parser.x: clean JSONArray.o Track.o Album.o Artist.o Tracks.o Albums.o Artists.o main.o 
+parser.x: clean JSONArray.o Track.o Album.o Artist.o ArtistImage.o Tracks.o Albums.o Artists.o ArtistImages.o main.o 
 	g++ $(CFLAGS) *.o -o parser.x
 
 main.o: main.cpp
 	g++ $(CFLAGS) -c main.cpp -o main.o
+
+ArtistImages.o: ArtistImages.cpp JSONArray.o
+	g++ $(CFLAGS) -c ArtistImages.cpp -o ArtistImages.o
 
 Artists.o: Artists.cpp JSONArray.o
 	g++ $(CFLAGS) -c Artists.cpp -o Artists.o
@@ -24,6 +27,9 @@ Albums.o: Albums.cpp JSONArray.o
 
 Tracks.o: Tracks.cpp JSONArray.o 
 	g++ $(CFLAGS) -c Tracks.cpp -o Tracks.o
+
+ArtistImage.o: ArtistImage.cpp
+	g++ $(CFLAGS) -c ArtistImage.cpp -o ArtistImage.o
 
 Artist.o: Artist.cpp
 	g++ $(CFLAGS) -c Artist.cpp -o Artist.o

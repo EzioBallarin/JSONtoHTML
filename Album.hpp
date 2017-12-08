@@ -3,7 +3,7 @@
  *  Author: Ali Kooshesh, Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-03-2017
- *  Last Modified: Thu 07 Dec 2017 09:14:36 AM PST
+ *  Last Modified: Thu 07 Dec 2017 03:02:35 PM PST
  *
  *  Description: Definition of class Album, subclass of JSONDataObject
  *
@@ -12,6 +12,7 @@
 #ifndef ALBUM_H
 #define ALBUM_H
 
+#include <fstream>
 #include "JSONDataObject.hpp"
 #include "Tracks.hpp"
 #include "AlbumImage.hpp"
@@ -41,6 +42,7 @@ class Album: public JSONDataObject {
 
         void print();
         std::string htmlString();
+        void makeHTMLPageForAlbum(std::string html);
 
     private:
         std::string _title, _genres, _year;

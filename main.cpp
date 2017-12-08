@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 11-12-2017
- *  Last Modified: Thu 07 Dec 2017 09:23:35 AM PST
+ *  Last Modified: Thu 07 Dec 2017 04:16:26 PM PST
  *
  *  Description: Main driver for parsing our JSON files
  *
@@ -17,6 +17,9 @@
 #include "Artists.hpp"
 #include "Albums.hpp"
 #include "Tracks.hpp"
+#include "ArtistImages.hpp"
+#include "AlbumImages.hpp"
+
 using namespace std;
 
 /**
@@ -33,6 +36,7 @@ int main() {
     Artists* a = new Artists();
     Albums* al = new Albums();
     Tracks* t = new Tracks();
+    ArtistImages* ai = new ArtistImages();
 
     /* PARSE ARTISTS */
     cout << "Parsing artists..." << endl;
@@ -57,17 +61,15 @@ int main() {
     cout << "Done parsing tracks." << endl;
     /******************************************/
 
+    cout << "Parsing artist images.." << endl;
+    ai->loadImagesFromFile("inputJSONfiles/artistImages.json");
+    ai->print();
+    cout << "Done parsing artist images." << endl;
+
     /* ADD TRACKS TO ALBUMS */
     cout << "Adding Tracks to Albums..." << endl;
     al->setTracksForAlbums(t);
     //al->print();
-    
-    fstream html;
-    html.open("test.html", ios::out);
-    html << "<html>\n<body>\n";
-    html << a->htmlString();
-    html << "</body>\n</html>\n";
-    html.close();
 
     /* ADD ALBUMS TO ARTISTS */
     a->setAlbumsForArtists(al);

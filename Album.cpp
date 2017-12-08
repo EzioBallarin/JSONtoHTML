@@ -3,12 +3,13 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 09:10:46 AM PST
+ *  Last Modified: Thu 07 Dec 2017 04:00:33 PM PST
  *
  *  Description:
  *
  */
 
+#include <sstream>
 #include "Album.hpp"
 #include "Artist.hpp"
 
@@ -160,7 +161,41 @@ std::string Album::htmlString() {
     html += "\t\t\t</table>\n";
     html += "\t\t</li>\n";
     html += tracks()->htmlString();
+    makeHTMLPageForAlbum(html);
     return html;
+}
+
+void Album::makeHTMLPageForAlbum(std::string html) {
+    std::fstream templateFile, htmlFile; 
+    char c;
+    std::string templateAttribute;
+    int album = albumID();
+   
+    std::string fileName = "html_albums/" + std::to_string(album) +".html";
+    htmlFile.open(fileName, std::fstream::out);
+    templateFile.open("HTML_templateFiles/album_template.html", std::fstream::in);
+
+    while (templateFile.good()) {
+        c = templateFile.get();
+        if (c == '<' && templateFile.peek() == '%') {
+            c = templateFile.get();
+            std::stringstream* s = new std::stringstream();
+            while (c != '<') {
+                s->put(c);
+                c = templateFile.get();
+            }
+            if (s->str() == "\% album_name \%>") {
+                htmlFile << title();
+            } else { 
+                htmlFile << html;
+            }
+            delete s;
+        } 
+        htmlFile << c;
+    }
+
+    htmlFile.close();
+    templateFile.close();
 }
 
 void Album::print() {
