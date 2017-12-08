@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 04:28:13 PM PST
+ *  Last Modified: Thu 07 Dec 2017 04:52:16 PM PST
  *
  *  Description: Definition of Albums container class
  *
@@ -16,6 +16,7 @@
 #include "Album.hpp"
 
 class Artist;
+class AlbumImages;
 
 class Albums: public JSONArray {
 
@@ -40,9 +41,11 @@ class Albums: public JSONArray {
         // HTML representation of collection
         std::string htmlString();
 
-        // Associate a Tracks collection with each Album in this Albums collection
+        // Functions for associating tracks, artists,
+        // and images with the proper albums
         void setTracksForAlbums(Tracks* tracks);
         void setArtistForAlbums(Artist* artist);
+        void setImagesForAlbums(AlbumImages* images);
         bool isArtistSet() { return _isArtistSet; }
 
         // Print for debugging

@@ -1,53 +1,61 @@
 /**
- *  File Name: ArtistImage.cpp
+ *  File Name: AlbumImage.cpp
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-07-2017
- *  Last Modified: Thu 07 Dec 2017 04:45:02 PM PST
+ *  Last Modified: Thu 07 Dec 2017 04:47:05 PM PST
  *
- *  Description:
+ *  Description: Implementation of AlbumImage class
  *
  */
 
-#include "ArtistImage.hpp"
+#include "AlbumImage.hpp"
 
-std::string ArtistImage::type() {
+AlbumImage::AlbumImage() {
+
+}
+
+AlbumImage::~AlbumImage() {
+
+}
+
+std::string AlbumImage::type() {
     if (cachedType)
         return _type;
     cachedType = true;
     return _type = valueForStringAttribute("type");
 }
-std::string ArtistImage::uri() {
+std::string AlbumImage::uri() {
     if (cachedURI)
         return _uri;
     cachedURI = true;
     return _uri = valueForStringAttribute("uri");
 }
-unsigned ArtistImage::width() {
+unsigned AlbumImage::width() {
     if (cachedWidth)
         return _width;
     cachedWidth = true;
     return _width = valueForIntegerAttribute("width");
 }
-unsigned ArtistImage::height() {
+unsigned AlbumImage::height() {
     if (cachedHeight)
         return _height;
     cachedHeight = true;
     return _height = valueForIntegerAttribute("height");
 }
-unsigned ArtistImage::artistID() {
+unsigned AlbumImage::albumID() {
     if (cachedArtistID)
-        return _artistID;
+        return _albumID;
     cachedArtistID = true;
-    return _artistID = valueForIntegerAttribute("artist_id");
+    return _albumID = valueForIntegerAttribute("album_id");
 }
 
-void ArtistImage::print() {
-    std::cout << "AristImage:" << std::endl;
+void AlbumImage::print() {
+    std::cout << "AlbumImage:" << std::endl;
     std::cout << "\tType: " << type() << std::endl;
     std::cout << "\tURI: " << uri() << std::endl;
     std::cout << "\tHeight: " << height() << std::endl;
     std::cout << "\tWidth: " << width() << std::endl;
-    std::cout << "\tArtist ID: " << artistID() << std::endl;
+    std::cout << "\tArtist ID: " << albumID() << std::endl;
     std::cout << std::endl;
 }

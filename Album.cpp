@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 04:00:33 PM PST
+ *  Last Modified: Thu 07 Dec 2017 05:07:42 PM PST
  *
  *  Description:
  *
@@ -148,6 +148,18 @@ unsigned Album::numTracks() {
     return _num_tracks = valueForIntegerAttribute("num_tracks");
 }
 
+void Album::setImages(AlbumImages* images) {
+    std::vector<AlbumImage*>::iterator it = images->listOfImages()->begin();
+    while (it != images->listOfImages()->end()) {
+        if ((*it)->type() == "primary")
+            _primaryAlbumImage = (*it);
+        else 
+            _secondaryAlbumImage = (*it);
+
+        it++;
+    }
+}
+
 std::string Album::htmlString() {
     std::string html = "\t\t<li>\n";
     html += "\t\t\t<p><strong>" + title() + "</strong></p>\n";
@@ -209,5 +221,10 @@ void Album::print() {
     std::cout << "\tArtist_id: " << artistID() << std::endl;
     std::cout << "\tTracks:" << std::endl;
     tracks()->print();
+    std::cout << "AlbumImages: " << std::endl;
+    if (primaryImage() != nullptr)
+    primaryImage()->print();
+    if (secondaryImage() != nullptr)
+    secondaryImage()->print();
     std::cout << std::endl;
 }

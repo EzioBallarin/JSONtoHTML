@@ -3,7 +3,7 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Mon 04 Dec 2017 11:22:12 PM PST
+ *  Last Modified: Thu 07 Dec 2017 04:48:49 PM PST
  *
  *  Description:
  *
@@ -18,6 +18,21 @@ class AlbumImage: public JSONDataObject {
     public:
         AlbumImage();
         ~AlbumImage();
+
+        std::string type();
+        std::string uri();
+        unsigned width();
+        unsigned height();
+        unsigned albumID();
+
+        void print();
+        std::string htmlString();
+    private:
+        std::string _type = "", _uri = "";
+        unsigned _width = -1, _height = -1, _albumID = -1;
+        bool cachedType = false, cachedURI = false,
+             cachedWidth = false, cachedHeight = false,
+             cachedArtistID = false;
 };
 
 #endif
