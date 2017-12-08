@@ -3,13 +3,14 @@
  *  Author: Ezio Ballarin 
  *  Student ID: 005633321
  *  Creation Date: 12-04-2017
- *  Last Modified: Thu 07 Dec 2017 05:07:42 PM PST
+ *  Last Modified: Thu 07 Dec 2017 05:38:39 PM PST
  *
  *  Description:
  *
  */
 
 #include <sstream>
+#include <string>
 #include "Album.hpp"
 #include "Artist.hpp"
 
@@ -163,6 +164,29 @@ void Album::setImages(AlbumImages* images) {
 std::string Album::htmlString() {
     std::string html = "\t\t<li>\n";
     html += "\t\t\t<p><strong>" + title() + "</strong></p>\n";
+    if (primaryImage() != nullptr) {
+        std::string height = std::to_string(primaryImage()->height() / 2);
+        std::string width =  std::to_string(primaryImage()->width() / 2);
+        std::string uri = primaryImage()->uri();
+        /*
+        html += "\t\t\t<img class=\"image\" ";
+        html += "width=\"" + width; html += "\" ";
+        html += "height=\"" + height; html += "\" ";
+        html += "src=\"" + primaryImage()->uri() +"\">";
+        */
+        html += "\t\t\t<img class='image' ";
+        html += "width='" + width + "' ";
+        html += "height='" + height + "' "; 
+        html += "src='" + uri + "'>\n";
+    } else if (secondaryImage() != nullptr) {
+        std::string height = std::to_string(secondaryImage()->height() / 2);
+        std::string width = std::to_string(secondaryImage()->width() / 2);
+        std::string uri = secondaryImage()->uri();
+        html += "\t\t\t<img class='image' ";
+        html += "width='" + width + "' ";
+        html += "height='" + height + "' "; 
+        html += "src='" + uri + "'>\n";
+    }
     html += "\t\t\t<table class=\"albumInfo\">\n";
     html += "\t\t\t\t<tbody>\n";
     html += "\t\t\t\t\t<tr><td class=\"aTitle\">" + title() + "</td></tr>\n";
